@@ -16,7 +16,6 @@ services:
     restart: always
     volumes:
       - ./db_data:/var/lib/mysql
-      - ./db_conf:/etc/mysql
     environment: # lấy từ file .env
       MYSQL_ROOT_PASSWORD: $MYSQL_PASS_ROOT
       MYSQL_DATABASE: $MYSQL_DB
