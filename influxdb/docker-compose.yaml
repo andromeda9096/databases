@@ -1,0 +1,23 @@
+version: '3.7'
+
+networks:
+  influxdb-network:
+
+services:
+  influxdb:
+    image: influxdb:1.8.10
+    container_name: influxdb
+    restart: always
+    hostname: influxdb
+    ports:
+      - 8086:8086
+      - 8089:8089/udp
+    networks:
+      - influxdb-network
+    volumes:
+      - ./db_data:/var/lib/influxdb
+      #- ./conf/influxdb.conf:/etc/influxdb/influxdb.conf:ro
+    environment: # lấy từ file .env tạo 1 database mới
+      INFLUXDB_DB: $INFLUX_DB
+      INFLUXDB_USER: $INFLUXDB_USER
+      INFLUXDB_USER_PASSWORD: $INFLUXDB_USER_PASSWORD
