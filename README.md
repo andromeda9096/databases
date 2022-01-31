@@ -1,1 +1,1 @@
-## https://sysad.tech/vi/ubuntu/database
+## https://tech.hbc.com.vn/vi/ubuntu/database
